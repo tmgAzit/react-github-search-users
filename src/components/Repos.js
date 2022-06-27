@@ -8,22 +8,22 @@ const Repos = () => {
   const chartData = [
     {
       label: 'HTML',
-      value: '40',
+      value: '25',
     },
     {
       label: 'CSS',
-      value: '20',
+      value: '25',
     },
     {
       label: 'JavaScript',
-      value: '18',
+      value: '50',
     },
   ];
 
   return (
     <section className='section'>
       <Wrapper className='section-center'>
-        <ExampleChart data={chartData} />;
+        <Pie3D data={chartData} />;
       </Wrapper>
     </section>
   );

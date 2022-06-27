@@ -34,7 +34,7 @@ const ChartComponent = ({ data }) => {
         //Set the chart subcaption
         subCaption: 'In MMbbl = One Million barrels',
         //Set the x-axis name
-        xAxisName: 'Country',
+        xAxisName: 'Skills',
         //Set the y-axis name
         yAxisName: 'Reserves (MMbbl)',
         numberSuffix: '',
