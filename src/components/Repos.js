@@ -6,9 +6,26 @@ const Repos = () => {
   const { repos } = useGlobalContext();
   // console.log(repos);
   let languages = repos.reduce((total, item) => {
+    // console.log(item);
     const { language } = item;
+    // console.log(language);
     if (!language) return total;
+    if (!total[language]) {
+      total[language] = { label: language, value: 1 };
+    } else {
+      total[language] = {
+        ...total[language],
+        value: total[language].value + 1,
+      };
+    }
+    return total;
   }, {});
+  languages = Object.values(languages)
+    .sort((a, b) => {
+      return b.value - a.value;
+    })
+    .slice(0, 5);
+  console.log(languages);
   const chartData = [
     {
       label: 'HTML',
@@ -27,7 +44,7 @@ const Repos = () => {
   return (
     <section className='section'>
       <Wrapper className='section-center'>
-        <Pie3D data={chartData} />;
+        <Pie3D data={languages} />;
       </Wrapper>
     </section>
   );
